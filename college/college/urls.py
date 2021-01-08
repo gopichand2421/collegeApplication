@@ -16,13 +16,20 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from rest_framework import routers
+from rest_framework.urlpatterns import  format_suffix_patterns
 from student.views import StudentViewSet,DepartmentViewSet
 
+from collegeadmin.views import AdminRegister
+
 router = routers.DefaultRouter()
-router.register(r'student', StudentViewSet)
-router.register(r'department',DepartmentViewSet)
+# router.register(r'student', StudentViewSet)
+# router.register(r'department',DepartmentViewSet)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include(router.urls))
+    # path('',include(router.urls)),
+    path('appadmin/', AdminRegister)
+
 ]
+urlpatterns = format_suffix_patterns(urlpatterns)
