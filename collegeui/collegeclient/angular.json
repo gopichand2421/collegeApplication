@@ -28,7 +28,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "../collegeclient/node_modules/bootstrap/scss/bootstrap.scss"
             ],
             "scripts": []
           },

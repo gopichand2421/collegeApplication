@@ -1,0 +1,11 @@
+.admin-element{
+    text-decoration: none;
+    box-sizing: border-box;
+    float: right;
+}
+.admin-element > li {
+    list-style: none;
+    color: white;
+    padding-top:10px;
+    padding-left: 40px;
+}
