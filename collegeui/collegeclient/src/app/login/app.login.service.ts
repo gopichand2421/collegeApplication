@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs';
-import { HttpClient, HttpHeaders } from '@angular/common/http'
+import {Observable, throwError} from 'rxjs';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import {catchError} from 'rxjs/operators';
 interface LoginDetials{
     responseData : {"token":String, "status":Number},
     status : String;
@@ -16,5 +17,18 @@ export class LoginService {
             username:email,
             password: password
         })
+        .pipe(catchError(this.handleError))
+    }
+
+    private handleError(errorRes : HttpErrorResponse){
+        let errorMessage = 'An unknow error message occured';
+
+        if(!errorRes.error || !errorRes.error.error){
+            return throwError(errorMessage);
+        }
+        switch(errorRes.error.error.message){
+
+        }
+        return throwError(errorMessage);
     }
 }
