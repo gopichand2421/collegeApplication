@@ -58,7 +58,7 @@ class LoginView(APIView):
         user = serilizer.validated_data["user"]
         login(request, user)
         token,create = Token.objects.get_or_create(user = user)
-        return Response({"token": token.key},status=200)
+        return Response({"token": token.key, "status":200},status=200)
 
 class LogOutView(APIView):
     authentication_classes = [TokenAuthentication,]

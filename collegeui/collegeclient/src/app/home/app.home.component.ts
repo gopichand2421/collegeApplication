@@ -6,5 +6,12 @@ import {Component} from '@angular/core'
     styleUrls : ['./app.home.component.scss',]
 })
 export class AppHomeComponent{
-
+    
+    // getUserNavStatus(){
+    //     localStorage.setItem('userLoggedIn','false');
+    //     console.log(Boolean(localStorage.getItem("userLoggedIn")))
+    //     console.log(Boolean(localStorage.getItem("userLoggedIn")) === false ? 'none' : 'block')
+    //     return Boolean(localStorage.getItem("userLoggedIn")) === false ? 'none' : 'block';
+        
+    // }
 }
