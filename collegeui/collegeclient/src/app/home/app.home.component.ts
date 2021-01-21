@@ -1,17 +1,23 @@
-import {Component} from '@angular/core'
+import {Component, OnInit, OnDestroy} from '@angular/core';
+import {Subscription} from 'rxjs'
+import { LoginService } from '../login/app.login.service';
 
 @Component({
     selector:'app-home',
     templateUrl : './app.home.component.html',
     styleUrls : ['./app.home.component.scss',]
 })
-export class AppHomeComponent{
+export class AppHomeComponent implements OnInit,OnDestroy{
     
-    // getUserNavStatus(){
-    //     localStorage.setItem('userLoggedIn','false');
-    //     console.log(Boolean(localStorage.getItem("userLoggedIn")))
-    //     console.log(Boolean(localStorage.getItem("userLoggedIn")) === false ? 'none' : 'block')
-    //     return Boolean(localStorage.getItem("userLoggedIn")) === false ? 'none' : 'block';
+    constructor(private loginservice : LoginService){
+
+    }
+
+    ngOnInit(){
+        // this.loginservice.
+    }
+
+    ngOnDestroy(){
         
-    // }
+    }
 }
